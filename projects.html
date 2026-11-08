@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects | Alya Altawash</title><meta name="description" content="Projects by Alya Altawash: GateKeep (cloud vehicle access control on Azure), UniPool (campus carpooling app) and Heston Auto-Services (garage management database).">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css"><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body class="inner projects"><div class="bg" aria-hidden="true"></div>
+<nav class="nav"><a class="brand" href="index.html">ALYA<span>.dev</span></a>
+<button class="burger" aria-label="Menu" aria-expanded="false">menu</button><ul><li><a href="home.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html" aria-current=page>Projects</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+<main>
+<header class="phead proj-head">
+<div>
+<p class="kicker"><span class="blip"></span>~/alya &gt; ls ./archive</p>
+<h1>Projects<span class="cur">_</span></h1>
+<svg class="rule" viewBox="0 0 320 24" aria-hidden="true"><g id="half" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+<path d="M0 12H118"/><path d="M118 12C130 12 136 6 146 1"/><path d="M118 12C130 12 136 18 146 23"/>
+<path d="M40 12C48 12 52 8 54 4"/><path d="M78 12C86 12 90 16 92 20"/><path d="M96 12C102 11 104 7 104 5"/>
+<path d="M136 12H150"/><circle cx="18" cy="12" r="1.6" fill="currentColor"/></g>
+<use href="#half" transform="matrix(-1 0 0 1 320 0)"/><path d="M160 4L167 12L160 20L153 12Z" fill="currentColor"/></svg>
+<p class="lead">3 cartridges recovered from the archive. Pick one to insert it into the reader and read the project.</p>
+</div>
+<figure class="drive">
+<div id="drive"></div>
+<figcaption><span>FUJIKAMA 85MB · 1989 <b class="drag-hint">[ drag to spin ]</b></span><span id="driveStat">archive drive · idle</span></figcaption>
+</figure>
+</header>
+
+<section aria-labelledby="rackH">
+<h2 id="rackH" class="sr-only">Project cartridges</h2>
+<div class="rack" id="rack"></div>
+<noscript><p class="dim">Turn on JavaScript to load the project cartridges.</p></noscript>
+</section>
+
+<section class="section" aria-labelledby="blankH">
+<div class="ph" id="blankH"><span>[--]</span> blank_cartridges</div>
+<p class="dim" style="margin-bottom:1.4rem">Still being written. They unlock when they ship.</p>
+<div class="rack blanks" id="blanks"></div>
+</section>
+</main>
+<footer><span>© 2026 Alya Altawash</span><span>full stack web engineer</span><a href="index.html">&lt; back to splash</a></footer>
+
+<div class="reader-ov" id="readerOv" role="dialog" aria-modal="true" aria-labelledby="rpTitle" hidden>
+<div class="ro-stage">
+<div class="deck" id="deck">
+<div class="deck-cart" id="deckCart"></div>
+<div class="reader" id="reader">
+<span class="rd-tab">ALYA.SYS</span><span class="rd-tab2">ARCHIVE READER · 85</span>
+<div class="rd-slot"></div>
+<div class="rd-window"><div class="rd-empty"><i></i><span>NO CARTRIDGE</span></div><div class="rd-clone" id="rdClone"></div><i class="rd-glass"></i></div>
+<div class="rd-ring"><i></i></div>
+<div class="rd-strip"><span class="rd-slotname">SLOT·A</span><i class="led l1"></i><i class="led l2"></i><i class="led l3"></i></div>
+<div class="rd-screen"><div class="rd-boot" id="rdBoot"></div><div class="rd-cover" id="rdCover"></div></div>
+<div class="rd-leds"><span><i class="led pwr"></i>PWR</span><span><i class="led read"></i>READ</span><span><i class="led data"></i>DATA</span></div>
+<div class="rd-btns"><button class="rd-btn" id="ejectBtn" type="button">EJECT</button><span class="rd-btn fake" aria-hidden="true">MODE</span></div>
+<div class="rd-vent"></div>
+<span class="rd-side">ARCHIVE·READER</span>
+<i class="rd-wire w1"></i><i class="rd-wire w2"></i>
+</div>
+</div>
+<article class="rp" id="rp" tabindex="-1"></article>
+</div>
+</div>
+<script src="assets/sigil-bg.js"></script>
+<script src="assets/projects.js"></script>
+<script type="module" src="assets/drive.js"></script><script src="assets/site.js"></script></body></html>

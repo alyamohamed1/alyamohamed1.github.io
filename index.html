@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alya Altawash | Full Stack Web Engineer</title>
+<meta name="description" content="Portfolio of Alya Altawash, full stack web engineer. Logic by default, driven by design.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preload" href="assets/laptop.glb" as="fetch" crossorigin>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head><body class="splash" data-mode="logic">
+<div id="loader" role="status" aria-label="Loading portfolio">
+<canvas class="ld-bg" aria-hidden="true"></canvas>
+<pre class="ld-code" aria-hidden="true"></pre>
+<div class="ld-center">
+<div class="ld-vid"><video src="assets/video/loader.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video></div>
+<div class="ld-out" aria-live="polite"></div>
+</div>
+<div class="ld-skip">[ click or press any key to skip ]</div>
+</div>
+<script src="assets/loader.js"></script>
+<div class="bg" aria-hidden="true"></div>
+<div class="corners" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
+<div class="top"><span>ALYA ALTAWASH <b>//</b> FULL STACK WEB ENGINEER</span><a href="home.html">skip intro &gt;&gt;</a></div>
+<div class="quote">
+<p class="kicker"><span class="blip"></span>sys.boot &gt; alya_altawash.portfolio</p>
+<h1><span class="l">Logic</span> by default,<br>driven by <span class="d">design</span>.</h1>
+<svg class="rule" viewBox="0 0 320 24" aria-hidden="true"><g id="half" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+<path d="M0 12H118"/><path d="M118 12C130 12 136 6 146 1"/><path d="M118 12C130 12 136 18 146 23"/>
+<path d="M40 12C48 12 52 8 54 4"/><path d="M78 12C86 12 90 16 92 20"/><path d="M96 12C102 11 104 7 104 5"/>
+<path d="M136 12H150"/><circle cx="18" cy="12" r="1.6" fill="currentColor"/></g>
+<use href="#half" transform="matrix(-1 0 0 1 320 0)"/><path d="M160 4L167 12L160 20L153 12Z" fill="currentColor"/></svg>
+<div class="lens"><span class="lens-label">LENS<b>//</b></span>
+<div class="toggle" role="group" aria-label="View mode"><button id="mLogic" aria-pressed="true">LOGIC</button><button id="mDesign" class="dz" aria-pressed="false">DESIGN</button></div></div>
+<p class="sub">&gt; drag the machine. switch the lens.</p>
+</div>
+<div id="stage" aria-label="Interactive 3D holographic laptop. Drag to rotate."></div>
+<div class="hint">[ drag to rotate ]</div>
+<div id="readout" class="readout" aria-hidden="true"></div>
+<div class="boot" id="boot" aria-hidden="true"></div>
+<a class="btn enter" href="home.html">[ ENTER SYSTEM ]</a>
+<script type="module" src="assets/splash.js"></script>
+</body></html>
