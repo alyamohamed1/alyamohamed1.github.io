@@ -53,7 +53,7 @@
     code: "CRT-04", title: "CAPSTONE", sub: "biofeedback horror stealth game", cap: "IN DEV", img: "assets/img/carts/capstone.jpg",
     name: "Biofeedback Adaptive Horror Stealth Game",
     desc: "A PC horror-stealth game that reads your heart rate through a wearable sensor and adapts the enemies, difficulty and scares to how stressed you really are.",
-    tech: ["ESP32 wearable", "MAX30102 heart-rate sensor", "game dev", "adaptive AI"],
+    tech: ["Unreal Engine", "ESP32 wearable", "MAX30102 heart-rate sensor", "adaptive AI"],
     team: "Alya Altawash, Wajd Alballal, Shadow Alghamdi",
     release: "April 2027",
   };
