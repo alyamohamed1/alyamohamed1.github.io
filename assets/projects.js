@@ -50,6 +50,7 @@
     },
   ];
   const SOON = {
+    id: "capstone", soon: true, accent: "#ffb13b", course: "Senior Capstone · American University of Bahrain",
     code: "CRT-04", title: "CAPSTONE", sub: "biofeedback horror stealth game", cap: "IN DEV", img: "assets/img/carts/capstone.jpg",
     name: "Biofeedback Adaptive Horror Stealth Game",
     desc: "A PC horror-stealth game that reads your heart rate through a wearable sensor and adapts the enemies, difficulty and scares to how stressed you really are.",
@@ -86,22 +87,14 @@
   });
   const blanks = $("#blanks");
   if (blanks) {
-    const d = document.createElement("div");
-    d.className = "soon";
-    d.innerHTML = `<div class="cart blank soon-cart" style="--c:#ffb13b" role="img" aria-label="${SOON.code}: ${esc(SOON.name)}, coming soon">${cartHTML(SOON)}<span class="soon-stamp" aria-hidden="true">COMING SOON</span></div>
-      <div class="panel soon-info">
-        <p class="soon-badge"><i></i>coming soon · in active development</p>
-        <h3>${esc(SOON.name)}</h3>
-        <p>${esc(SOON.desc)}</p>
-        <div class="rp-tags">${SOON.tech.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-        <dl class="kv">
-          <dt>type</dt><dd>senior capstone project</dd>
-          <dt>team</dt><dd>${esc(SOON.team)}</dd>
-          <dt>release</dt><dd class="soon-date">${esc(SOON.release)}</dd>
-        </dl>
-      </div>`;
-    blanks.append(d);
+    const b = document.createElement("button");
+    b.className = "cart soon-cart"; b.type = "button"; b.dataset.id = SOON.id; b.style.setProperty("--c", SOON.accent);
+    b.setAttribute("aria-label", `Insert ${SOON.title} cartridge: ${SOON.name}, coming soon`);
+    b.innerHTML = cartHTML(SOON) + `<span class="soon-stamp" aria-hidden="true">COMING SOON</span>`;
+    b.addEventListener("click", () => insert(SOON, b));
+    blanks.append(b);
   }
+
 
   // reader
   const ov = $("#readerOv"), deck = $("#deck"), deckCart = $("#deckCart"), clone = $("#rdClone"), reader = $("#reader");
@@ -114,6 +107,18 @@
   const slideFrames = [{ transform: SLIDE }, { transform: "translateX(.5em)", offset: 0.88 }, { transform: "translateX(0)" }];
 
   function panelHTML(p) {
+    if (p.soon) return `<div class="rp-bar"><span>[${p.code}] ${p.id}.md</span><button class="x" type="button" data-eject aria-label="Eject cartridge and close">[ eject ]</button></div>
+    <div class="rp-body">
+      <p class="soon-badge"><i></i>coming soon · in active development</p>
+      <p class="rp-course">${esc(p.course)}</p>
+      <h2 id="rpTitle">${esc(p.title)}</h2>
+      <p class="rp-tag">${esc(p.name)}</p>
+      <section><h3>&gt; about</h3><p>${esc(p.desc)}</p></section>
+      <section><h3>&gt; stack</h3><div class="rp-tags">${p.tech.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div></section>
+      <section><h3>&gt; team</h3><p class="rp-team">${esc(p.team)}</p></section>
+      <section><h3>&gt; expected_release</h3><p class="soon-date">${esc(p.release)}</p></section>
+      <div class="row"><button class="btn alt" type="button" data-eject>[ eject cartridge ]</button></div>
+    </div>`;
     const list = (a) => `<ul>${a.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
     return `<div class="rp-bar"><span>[${p.code}] ${p.id}.md</span><button class="x" type="button" data-eject aria-label="Eject cartridge and close">[ eject ]</button></div>
     <div class="rp-body">
@@ -189,7 +194,7 @@
     reader.classList.add("clunk", "on", "reading");
     later(() => reader.classList.remove("clunk"), 260);
     driveState("read", current);
-    typeBoot([`> detect ${current.code} ... ok`, `> read ${current.cap.toLowerCase()} sectors`, `> mount /${current.id}`, `> ${current.title}.md ready`], () => {
+    typeBoot(current.soon ? [`> detect ${current.code} ... ok`, `> status: in development`, `> build eta: ${current.release.toLowerCase()}`, `> preview.md ready`] : [`> detect ${current.code} ... ok`, `> read ${current.cap.toLowerCase()} sectors`, `> mount /${current.id}`, `> ${current.title}.md ready`], () => {
       reader.classList.remove("reading"); reader.classList.add("done");
       later(() => {
         ov.classList.add("split");
